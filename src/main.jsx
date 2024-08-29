@@ -3,14 +3,14 @@ import ReactDOM from "react-dom/client";
 import App from "./App.jsx";
 import "./index.css";
 import { BrowserRouter } from "react-router-dom";
-import { ContextProvider } from "./context/Index.jsx";
-import { inittialState, reducer } from "./context/Reduc.js";
+import { Provider } from "react-redux";
+import { store } from "./redux/index.js";
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-    <BrowserRouter>
-      <ContextProvider initialState={inittialState} reducer={reducer}>
+    <Provider store={store}>
+      <BrowserRouter>
         <App />
-      </ContextProvider>
-    </BrowserRouter>
+      </BrowserRouter>
+    </Provider>
   </React.StrictMode>
 );
